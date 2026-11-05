@@ -1,0 +1,5 @@
+# Environment scope
+
+The per-run CSV is authoritative. KP/AP and pre-V10 TSP terminals record Python 3.13.5; V10 and later TSP terminals record Python 3.12.14. All selected terminals record SciPy 1.17.0 and NumPy 2.3.5. The YAML files are reconstruction recipes, not recovered original lockfiles. Pandas 2.2.3 is a packaging-tested import dependency; its historical version was not recorded in the terminal schema. The analysis/figure check was run with Python 3.12.14, NumPy 2.3.5 and Matplotlib 3.10.8.
+
+The archived backend uses SciPy's private `scipy.optimize._highspy._core` interface; the SciPy version pin is intentional. Linux CPU affinity is used by native experiment runners. At least w+1 allowed CPUs are required for w workers plus a coordinator; CPU allowance does not prove an equivalent CPU quota. One HiGHS thread per worker is explicitly requested. Historical host metadata is retained in original terminal bytes. This release does not claim timing portability across hardware, quotas, operating systems or Python environments.
